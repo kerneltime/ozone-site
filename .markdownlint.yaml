@@ -15,17 +15,20 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# This file extends the defaults present in https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
+# This file extends the defaults present in
+# https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
+
+# Only use # characters to indicate headings
+heading-style:
+  style: atx
 
 # Only - (dash) character is allowed for bullet lists.
-heading-increment:
+ul-style:
   style: dash
 
 line-length:
   # No line length requirement for general text.
   line_length: -1
-  # For code, match Ozone's line length.
-  code_block_line_length: 120
   # Use shorter headings to keep the minimap on the right legible.
   heading_block_line_length: 80
 
@@ -40,6 +43,7 @@ no-inline-html:
   - br
   - Tabs
   - TabItem
+  - DocCardList
 
 # Allow bare URLs since wrapping URLs in <> is invalid mdx.
 no-bare-urls: false
@@ -76,6 +80,7 @@ proper-names:
   - CLI
   - RPC
   - EC
+  - BCSID
   - SPNEGO
   - SASL
   - TLS
@@ -94,6 +99,7 @@ proper-names:
   - RocksDB
   - Jira
   - Java
+  - JVM
   - Maven
   - GPG
   - Netty
@@ -102,14 +108,18 @@ proper-names:
   - pnpm
   - S3
   - Hadoop
-  # Enforce capitalization for these words only when they are used in sentences (surrounded by spaces).
+  - UUID
+  - IP address
+  # Enforce capitalization for these words only when they are used in sentences (preceded by a space).
   # Other uses in repo names or links like [apache/ozone](https://github.com/apache/ozone) are ok.
-  - " Ratis "
-  - " Ozone "
-  - " Apache "
-  - " ASF "
-  - " HTTP "
-  - " HTTPS "
+  - " Ratis"
+  - " Ozone"
+  - " Apache"
+  - " ASF"
+  - " HTTP"
+  - " http:"
+  - " HTTPS"
+  - " https:"
 
 # Indentation should not be used to indicate a multi-line code block.
 code-block-style:
@@ -134,3 +144,7 @@ link-image-style:
 # Use pipes on both ends of every line in a table.
 table-pipe-style:
   style: leading_and_trailing
+
+# Disallow duplicate headings at the same level under the same parent heading.
+no-duplicate-heading:
+  siblings_only: true

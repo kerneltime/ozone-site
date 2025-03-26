@@ -30,11 +30,11 @@ const darkCodeTheme = themes.dracula;
 const config = {
   title: 'Apache Ozone',
   tagline: 'Scalable, reliable, distributed storage system optimized for data analytics and object store workloads.',
-  favicon: 'img/favicon/favicon.ico',
-
+  // TODO: HDDS-12129 Delete this before the site goes live to enable search engine indexing.
+  noIndex: true,
   // Set the production URL of the website. Must be updated when the final site is deployed.
   // This must match the URL the website is hosted at for social media previews to work.
-  // If you are testing the social media image (themeConfig.image) locally, set this to http://localhost:3000.
+  // If you are testing the social media image (themeConfig.image) locally, set this to http://localhost:3001.
   url: 'https://ozone-site-v2.staged.apache.org',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
@@ -55,10 +55,43 @@ const config = {
     locales: ['en'],
   },
 
+  /*
+  Docusaurus does not currently support multiple favicons out of the box.
+  Manually insert head tags to configure support for favicons on multiple platforms.
+  */
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        href: 'favicon.ico',
+        sizes: '32x32'
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        href: 'favicon.svg',
+        type: "image/svg+xml"
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        href: 'apple-touch-icon.png',
+      },
+    },
+  ],
+
   markdown: {
-    // Validate markdown frontmatter against a more restrictive schema than what Docusaurus allows.
-    // This ensures all pages are using a minimal set of consistent keys.
-    // It can also be used to require all pages to define certain markdown front matter keys.
+    /*
+    Validate markdown frontmatter against a more restrictive schema than what Docusaurus allows.
+    This ensures all pages are using a minimal set of consistent keys.
+    It can also be used to require all pages to define certain markdown front matter keys.
+    See https://docusaurus.io/docs/api/docusaurus-config#markdown for reference.
+    */
     parseFrontMatter: async (params) => {
       // Reuse the default parser.
       const result = await params.defaultParseFrontMatter(params);
@@ -86,7 +119,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: undefined,
           // TODO update this link when the new website's branch is merged.
           editUrl:
             'https://github.com/apache/ozone-site/tree/HDDS-9225-website-v2',
@@ -98,15 +131,52 @@ const config = {
             require.resolve('./src/css/footer.css'),
           ],
         },
+        sitemap: {
+          /*
+          Check that all generated URLs from the build use kebab-case and lowercase.
+          See https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-sitemap#ex-config for reference.
+          */
+          createSitemapItems: async (params) => {
+            const {defaultCreateSitemapItems, ...rest} = params;
+            const items = await defaultCreateSitemapItems(rest);
+
+            // TODO Base URL must be updated when the new website's branch is merged.
+            const validUrlRegex = new RegExp('^https://ozone-site-v2\.staged\.apache\.org/([a-z0-9][a-z0-9\./-]*[a-z0-9/])?$');
+            items.forEach((item, index) => {
+              if (!validUrlRegex.test(item.url)) {
+                  console.error('Generated URL', item.url, 'does not match the allowed RegEx:', validUrlRegex);
+                  console.error('All URLs should use kebab case and lowercase letters.');
+                  process.exit(1);
+              }
+            });
+            return items;
+          },
+        },
       }),
     ],
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: 'pwa/manifest.json',
+          },
+        ],
+      },
+    ]
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
-        defaultMode: 'light'
+        defaultMode: 'light',
+        respectPrefersColorScheme: true, // Automatically use dark mode when the user's system prefers it
       },
       // Optional: Add an announcement bar to the top of the website.
       // announcementBar: {
@@ -128,7 +198,6 @@ const config = {
           {
             label: 'Docs',
             to: 'docs',
-            position: 'left',
           },
           {
             to: 'download',
@@ -141,6 +210,10 @@ const config = {
           {
             to: 'faq',
             label: 'FAQ',
+          },
+          {
+            to: 'community/blogs',
+            label: 'Blogs',
           },
           {
             label: 'Community',
@@ -168,10 +241,6 @@ const config = {
               {
                 to: 'community/events-and-media',
                 label: 'Events and Media',
-              },
-              {
-                to: 'community/blogs',
-                label: 'Blogs',
               },
             ]
           },

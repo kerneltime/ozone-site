@@ -41,7 +41,7 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ${{ env.image_tar }}
-        key: image-${{ hashFiles('Dockerfile', 'compose.yml', 'pnpm-lock.yaml') }}
+        key: image2-${{ hashFiles('Dockerfile', 'compose.yml', 'pnpm-lock.yaml') }}
         lookup-only: true
     - name: Build Docker image
       if: steps.cache.outputs.cache-hit != 'true'
@@ -56,7 +56,7 @@ jobs:
       uses: actions/cache/save@v4
       with:
         path: ${{ env.image_tar }}
-        key: image-${{ hashFiles('Dockerfile', 'compose.yml', 'pnpm-lock.yaml') }}
+        key: image2-${{ hashFiles('Dockerfile', 'compose.yml', 'pnpm-lock.yaml') }}
   build-website:
     needs:
     - build-image
@@ -68,7 +68,7 @@ jobs:
       uses: actions/cache/restore@v4
       with:
         path: ${{ env.image_tar }}
-        key: image-${{ hashFiles('Dockerfile', 'compose.yml', 'pnpm-lock.yaml') }}
+        key: image2-${{ hashFiles('Dockerfile', 'compose.yml', 'pnpm-lock.yaml') }}
     - name: Load docker image
       run: |
         docker load --input="${{ env.image_tar }}"
@@ -82,22 +82,6 @@ jobs:
         path: build
         if-no-files-found: error
         retention-days: 1
-  check-sitemap:
-    needs:
-    - build-website
-    runs-on: ubuntu-latest
-    steps:
-    - name: Get URL check script
-      uses: actions/checkout@v4
-    - name: Download website build artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: build
-        path: build
-    - name: Check sitemap.xml
-      working-directory: ${{ env.script_dir }}
-      run: |
-        ./url.sh "$GITHUB_WORKSPACE"/build/sitemap.xml
   run-website:
     needs:
     - build-website
@@ -114,7 +98,7 @@ jobs:
       uses: actions/cache/restore@v4
       with:
         path: ${{ env.image_tar }}
-        key: image-${{ hashFiles('Dockerfile', 'compose.yml', 'pnpm-lock.yaml') }}
+        key: image2-${{ hashFiles('Dockerfile', 'compose.yml', 'pnpm-lock.yaml') }}
     - name: Load docker image
       run: |
         docker load --input="${{ env.image_tar }}"
