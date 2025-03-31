@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Apache Ozone","applicationCategory":"Storage","operatingSystem":"Cross-platform","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Scalable, reliable, distributed storage system optimized for data analytics and object store workloads.","url":"https://ozone.apache.org/","author":{"@type":"Organization","name":"The Apache Software Foundation","url":"https://www.apache.org/"},"license":"https://www.apache.org/licenses/LICENSE-2.0"}</script>
 <script src="/script/matomo.js"></script><link rel="stylesheet" href="/ozone-site/assets/css/styles.9cb94245.css">
-<script src="/ozone-site/assets/js/runtime~main.979add80.js" defer="defer"></script>
+<script src="/ozone-site/assets/js/runtime~main.031fd445.js" defer="defer"></script>
 <script src="/ozone-site/assets/js/main.6d189a62.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -24,7 +24,7 @@
 <ul>
 <li>Managed by the Storage Container Manager (SCM)</li>
 <li>The primary unit of replication in the system</li>
-<li>Self-contained units that include all necessary metadata and data for themselves.</li>
+<li>Self-contained units that include all necessary metadata and data for themselves</li>
 <li>Designed to contain multiple blocks across different buckets and volumes</li>
 </ul>
 <p>Containers provide a critical abstraction layer that separates the logical namespace management (handled by Ozone Manager) from the physical storage management (handled by Storage Container Manager).</p>
@@ -43,8 +43,8 @@
 <li><strong>Replicated Containers</strong>: The default approach uses a replication factor of 3, with the Ratis (Raft) consensus protocol ensuring consistency across replicas.</li>
 </ol>
 <p><img decoding="async" loading="lazy" alt="Replicated Container Structure" src="/ozone-site/assets/images/ozone-storage-hierarchy-replicated-61dad9a6b6d9f5c051c9096a8ff64afd.svg" width="1100" height="690" class="img_xOp1"></p>
-<ol start="2">
-<li><strong>Erasure Coded Containers</strong>: A more space-efficient approach that splits data across multiple datanodes with parity blocks, reducing storage overhead while maintaining durability.</li>
+<ol>
+<li><strong>Erasure Coded Containers</strong>: A more space-efficient approach that splits data across multiple Datanodes with parity blocks, reducing storage overhead while maintaining durability.</li>
 </ol>
 <p><img decoding="async" loading="lazy" alt="EC Container Structure" src="/ozone-site/assets/images/ozone-storage-hierarchy-ec-d079a197c6d433941c81b045ab01c5ad.svg" width="1100" height="900" class="img_xOp1"></p>
 <p>Replication happens at the container level rather than the block or object level, which significantly reduces the metadata management overhead and enables Ozone to scale to billions of objects efficiently.</p>
@@ -54,13 +54,13 @@
 <ul>
 <li>Newly created containers start in this state</li>
 <li>Containers are mutable and can accept new blocks</li>
-<li>Replicated using RAFT (Ratis) or Erasure Coded for storage efficient durability and availability.</li>
+<li>Replicated using RAFT (Ratis) or Erasure Coded for storage efficient durability and availability</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_i6ia" id="2-closed-state">2. CLOSED State<a href="#2-closed-state" class="hash-link" aria-label="Direct link to 2. CLOSED State" title="Direct link to 2. CLOSED State">​</a></h3>
 <ul>
 <li>Triggered when a container reaches its capacity limit</li>
 <li>Containers become immutable</li>
-<li>Replicated via asynchronous container copy mechanisms or reconstructed via Erasure Code.</li>
+<li>Replicated via asynchronous container copy mechanisms or reconstructed via Erasure Code</li>
 <li>All replica nodes can serve READ operations, improving read performance</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_i6ia" id="containers-and-scaling">Containers and Scaling<a href="#containers-and-scaling" class="hash-link" aria-label="Direct link to Containers and Scaling" title="Direct link to Containers and Scaling">​</a></h2>
