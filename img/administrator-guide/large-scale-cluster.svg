@@ -17,6 +17,7 @@
         .service-text { fill: #ffffff; text-anchor: middle; font-weight: bold; }
         .section-label { fill: #357500; text-anchor: middle; font-weight: bold; font-size: 16px; }
         .arrow-line { stroke: #255200; stroke-width: 1.5; marker-end: url(#arrow); }
+        .rack-box { fill: none; stroke: #3a8100; stroke-width: 1.5; stroke-dasharray: 6,3; rx: 8; ry: 8; }
     </style>
 
     <!-- Arrowhead marker definition -->
@@ -71,7 +72,10 @@
     <text x="770" y="135" font-size="14" class="text-label">Node</text>
 
     <!-- Section Label: Gateway Nodes -->
-    <text x="300" y="200" class="section-label">Gateway Nodes</text>
+    <text x="300" y="190" class="section-label">Gateway Nodes</text>
+    
+    <!-- Gateway Cluster Box -->
+    <rect x="130" y="195" width="340" height="110" rx="10" ry="10" fill="none" stroke="#3a8100" stroke-width="2" stroke-dasharray="6,3"/>
 
     <!-- Gateway Node 1 -->
     <rect x="140" y="210" width="100" height="80" class="server-box"/>
@@ -99,57 +103,74 @@
     <!-- Section Label: Datanodes -->
     <text x="500" y="330" class="section-label">Datanodes (Multiple Racks)</text>
 
-    <!-- Datanode grid - multiple datanodes across racks, centered -->
-    <!-- Rack 1 -->
-    <rect x="250" y="350" width="80" height="60" class="server-box"/>
-    <text x="290" y="385" font-size="14" class="text-label">DN 1</text>
+    <!-- Rack 1 with enclosing box -->
+    <rect x="230" y="340" width="450" height="80" class="rack-box"/>
+    <text x="710" y="385" font-size="14" class="text-label">Rack 1</text>
+    
+    <!-- Datanode grid - Rack 1, evenly spaced -->
+    <rect x="240" y="350" width="80" height="60" class="server-box"/>
+    <text x="280" y="385" font-size="14" class="text-label">DN 1</text>
 
-    <rect x="340" y="350" width="80" height="60" class="server-box"/>
-    <text x="380" y="385" font-size="14" class="text-label">DN 2</text>
+    <rect x="330" y="350" width="80" height="60" class="server-box"/>
+    <text x="370" y="385" font-size="14" class="text-label">DN 2</text>
 
-    <rect x="430" y="350" width="80" height="60" class="server-box"/>
-    <text x="470" y="385" font-size="14" class="text-label">DN 3</text>
+    <rect x="420" y="350" width="80" height="60" class="server-box"/>
+    <text x="460" y="385" font-size="14" class="text-label">DN 3</text>
 
-    <text x="530" y="385" font-size="14" class="text-label">...</text>
+    <text x="520" y="385" font-size="14" class="text-label">...</text>
 
-    <rect x="570" y="350" width="80" height="60" class="server-box"/>
-    <text x="610" y="385" font-size="14" class="text-label">DN N</text>
+    <rect x="580" y="350" width="80" height="60" class="server-box"/>
+    <text x="620" y="385" font-size="14" class="text-label">DN N</text>
 
-    <!-- Rack 2 -->
-    <rect x="250" y="430" width="80" height="60" class="server-box"/>
-    <text x="290" y="465" font-size="14" class="text-label">DN 1</text>
+    <!-- Rack 2 with enclosing box -->
+    <rect x="230" y="420" width="450" height="80" class="rack-box"/>
+    <text x="710" y="465" font-size="14" class="text-label">Rack 2</text>
+    
+    <!-- Datanode grid - Rack 2, evenly spaced -->
+    <rect x="240" y="430" width="80" height="60" class="server-box"/>
+    <text x="280" y="465" font-size="14" class="text-label">DN 1</text>
 
-    <rect x="340" y="430" width="80" height="60" class="server-box"/>
-    <text x="380" y="465" font-size="14" class="text-label">DN 2</text>
+    <rect x="330" y="430" width="80" height="60" class="server-box"/>
+    <text x="370" y="465" font-size="14" class="text-label">DN 2</text>
 
-    <rect x="430" y="430" width="80" height="60" class="server-box"/>
-    <text x="470" y="465" font-size="14" class="text-label">DN 3</text>
+    <rect x="420" y="430" width="80" height="60" class="server-box"/>
+    <text x="460" y="465" font-size="14" class="text-label">DN 3</text>
 
-    <text x="530" y="465" font-size="14" class="text-label">...</text>
+    <text x="520" y="465" font-size="14" class="text-label">...</text>
 
-    <rect x="570" y="430" width="80" height="60" class="server-box"/>
-    <text x="610" y="465" font-size="14" class="text-label">DN N</text>
+    <rect x="580" y="430" width="80" height="60" class="server-box"/>
+    <text x="620" y="465" font-size="14" class="text-label">DN N</text>
 
-    <!-- Rack 3 -->
-    <rect x="250" y="510" width="80" height="60" class="server-box"/>
-    <text x="290" y="545" font-size="14" class="text-label">DN 1</text>
+    <!-- Rack 3 with enclosing box -->
+    <rect x="230" y="500" width="450" height="80" class="rack-box"/>
+    <text x="710" y="545" font-size="14" class="text-label">Rack 3</text>
+    
+    <!-- Datanode grid - Rack 3, evenly spaced -->
+    <rect x="240" y="510" width="80" height="60" class="server-box"/>
+    <text x="280" y="545" font-size="14" class="text-label">DN 1</text>
 
-    <rect x="340" y="510" width="80" height="60" class="server-box"/>
-    <text x="380" y="545" font-size="14" class="text-label">DN 2</text>
+    <rect x="330" y="510" width="80" height="60" class="server-box"/>
+    <text x="370" y="545" font-size="14" class="text-label">DN 2</text>
 
-    <rect x="430" y="510" width="80" height="60" class="server-box"/>
-    <text x="470" y="545" font-size="14" class="text-label">DN 3</text>
+    <rect x="420" y="510" width="80" height="60" class="server-box"/>
+    <text x="460" y="545" font-size="14" class="text-label">DN 3</text>
 
-    <text x="530" y="545" font-size="14" class="text-label">...</text>
+    <text x="520" y="545" font-size="14" class="text-label">...</text>
 
-    <rect x="570" y="510" width="80" height="60" class="server-box"/>
-    <text x="610" y="545" font-size="14" class="text-label">DN N</text>
+    <rect x="580" y="510" width="80" height="60" class="server-box"/>
+    <text x="620" y="545" font-size="14" class="text-label">DN N</text>
 
+    <!-- Additional rack indicator -->
+    <text x="450" y="600" font-size="14" class="text-label">Additional Racks...</text>
 
     <!-- Arrows -->
-    <!-- Gateway to Load Balancer arrows -->
-    <line x1="460" y1="250" x2="510" y2="250" class="arrow-line"/>
-
+    <!-- Gateway Cluster to Load Balancer arrow -->
+    <line x1="470" y1="250" x2="510" y2="250" class="arrow-line"/>
+    
+    <!-- Individual gateway connection lines (non-arrowed) -->
+    <line x1="240" y1="250" x2="280" y2="250" stroke="#255200" stroke-width="1" stroke-dasharray="4,2"/>
+    <line x1="350" y1="250" x2="380" y2="250" stroke="#255200" stroke-width="1" stroke-dasharray="4,2"/>
+    
     <!-- Load Balancer to Clients arrow -->
     <line x1="630" y1="250" x2="680" y2="250" class="arrow-line"/>
 </svg>
