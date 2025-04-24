@@ -145,9 +145,6 @@
     <rect x="410" y="510" width="80" height="60" class="server-box"/>
     <text x="450" y="545" font-size="14" class="text-label">DN N</text>
 
-    <!-- Ellipsis for more racks -->
-    <text x="500" y="545" font-size="18" class="text-label">...</text>
-    <text x="560" y="545" font-size="14" class="text-label">Multiple Racks</text>
 
     <!-- Arrows -->
     <!-- Gateway to Load Balancer arrows -->
