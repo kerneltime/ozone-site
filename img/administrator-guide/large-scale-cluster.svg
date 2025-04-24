@@ -151,8 +151,6 @@
 
     <!-- Arrows -->
     <!-- Gateway to Load Balancer arrows -->
-    <line x1="240" y1="250" x2="510" y2="250" class="arrow-line"/>
-    <line x1="350" y1="250" x2="510" y2="250" class="arrow-line"/>
     <line x1="460" y1="250" x2="510" y2="250" class="arrow-line"/>
 
     <!-- Load Balancer to Clients arrow -->
