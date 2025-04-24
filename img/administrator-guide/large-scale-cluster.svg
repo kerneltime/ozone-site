@@ -28,77 +28,83 @@
     </defs>
 
     <!-- Section Label: OM Nodes -->
-    <text x="180" y="70" class="section-label">OM Nodes</text>
+    <text x="210" y="60" class="section-label">OM Nodes</text>
+    
+    <!-- OM Nodes Group Box -->
+    <rect x="80" y="65" width="300" height="110" rx="10" ry="10" fill="none" stroke="#3a8100" stroke-width="1.5" stroke-dasharray="6,3"/>
 
     <!-- OM Node 1 -->
-    <rect x="50" y="80" width="80" height="80" class="server-box"/>
-    <text x="90" y="105" font-size="14" class="text-label">OM</text>
-    <text x="90" y="125" font-size="14" class="text-label">Node 1</text>
+    <rect x="90" y="80" width="80" height="80" class="server-box"/>
+    <text x="130" y="105" font-size="14" class="text-label">OM</text>
+    <text x="130" y="125" font-size="14" class="text-label">Node 1</text>
 
     <!-- OM Node 2 -->
-    <rect x="140" y="80" width="80" height="80" class="server-box"/>
-    <text x="180" y="105" font-size="14" class="text-label">OM</text>
-    <text x="180" y="125" font-size="14" class="text-label">Node 2</text>
+    <rect x="190" y="80" width="80" height="80" class="server-box"/>
+    <text x="230" y="105" font-size="14" class="text-label">OM</text>
+    <text x="230" y="125" font-size="14" class="text-label">Node 2</text>
 
     <!-- OM Node 3 -->
-    <rect x="230" y="80" width="80" height="80" class="server-box"/>
-    <text x="270" y="105" font-size="14" class="text-label">OM</text>
-    <text x="270" y="125" font-size="14" class="text-label">Node 3</text>
+    <rect x="290" y="80" width="80" height="80" class="server-box"/>
+    <text x="330" y="105" font-size="14" class="text-label">OM</text>
+    <text x="330" y="125" font-size="14" class="text-label">Node 3</text>
 
     <!-- Section Label: SCM Nodes -->
-    <text x="500" y="70" class="section-label">SCM Nodes</text>
+    <text x="530" y="60" class="section-label">SCM Nodes</text>
+    
+    <!-- SCM Nodes Group Box -->
+    <rect x="400" y="65" width="300" height="110" rx="10" ry="10" fill="none" stroke="#3a8100" stroke-width="1.5" stroke-dasharray="6,3"/>
 
     <!-- SCM Node 1 -->
-    <rect x="370" y="80" width="80" height="80" class="server-box"/>
-    <text x="410" y="105" font-size="14" class="text-label">SCM</text>
-    <text x="410" y="125" font-size="14" class="text-label">Node 1</text>
+    <rect x="410" y="80" width="80" height="80" class="server-box"/>
+    <text x="450" y="105" font-size="14" class="text-label">SCM</text>
+    <text x="450" y="125" font-size="14" class="text-label">Node 1</text>
 
     <!-- SCM Node 2 -->
-    <rect x="460" y="80" width="80" height="80" class="server-box"/>
-    <text x="500" y="105" font-size="14" class="text-label">SCM</text>
-    <text x="500" y="125" font-size="14" class="text-label">Node 2</text>
+    <rect x="510" y="80" width="80" height="80" class="server-box"/>
+    <text x="550" y="105" font-size="14" class="text-label">SCM</text>
+    <text x="550" y="125" font-size="14" class="text-label">Node 2</text>
 
     <!-- SCM Node 3 -->
-    <rect x="550" y="80" width="80" height="80" class="server-box"/>
-    <text x="590" y="105" font-size="14" class="text-label">SCM</text>
-    <text x="590" y="125" font-size="14" class="text-label">Node 3</text>
+    <rect x="610" y="80" width="80" height="80" class="server-box"/>
+    <text x="650" y="105" font-size="14" class="text-label">SCM</text>
+    <text x="650" y="125" font-size="14" class="text-label">Node 3</text>
 
     <!-- Section Label: Recon Node -->
-    <text x="770" y="70" class="section-label">Recon</text>
+    <text x="850" y="70" class="section-label">Recon</text>
 
     <!-- Recon Node -->
-    <rect x="730" y="80" width="80" height="80" class="server-box"/>
-    <text x="770" y="115" font-size="14" class="text-label">Recon</text>
-    <text x="770" y="135" font-size="14" class="text-label">Node</text>
+    <rect x="810" y="80" width="80" height="80" class="server-box"/>
+    <text x="850" y="115" font-size="14" class="text-label">Recon</text>
+    <text x="850" y="135" font-size="14" class="text-label">Node</text>
 
     <!-- Section Label: Gateway Nodes -->
-    <text x="300" y="190" class="section-label">Gateway Nodes</text>
+    <text x="340" y="190" class="section-label">Gateway Nodes</text>
     
     <!-- Gateway Cluster Box -->
-    <rect x="130" y="195" width="340" height="110" rx="10" ry="10" fill="none" stroke="#3a8100" stroke-width="2" stroke-dasharray="6,3"/>
+    <rect x="170" y="195" width="340" height="110" rx="10" ry="10" fill="none" stroke="#3a8100" stroke-width="2" stroke-dasharray="6,3"/>
 
     <!-- Gateway Node 1 -->
-    <rect x="140" y="210" width="100" height="80" class="server-box"/>
-    <text x="190" y="235" font-size="14" class="text-label">Gateway</text>
-    <text x="190" y="255" font-size="14" class="text-label">(S3G/HttpFS)</text>
+    <rect x="180" y="210" width="100" height="80" class="server-box"/>
+    <text x="230" y="235" font-size="14" class="text-label">Gateway</text>
+    <text x="230" y="255" font-size="14" class="text-label">(S3G/HttpFS)</text>
 
     <!-- Gateway Node 2 -->
-    <rect x="250" y="210" width="100" height="80" class="server-box"/>
-    <text x="300" y="235" font-size="14" class="text-label">Gateway</text>
-    <text x="300" y="255" font-size="14" class="text-label">(S3G/HttpFS)</text>
+    <rect x="290" y="210" width="100" height="80" class="server-box"/>
+    <text x="340" y="235" font-size="14" class="text-label">Gateway</text>
+    <text x="340" y="255" font-size="14" class="text-label">(S3G/HttpFS)</text>
 
     <!-- Gateway Node 3 -->
-    <rect x="360" y="210" width="100" height="80" class="server-box"/>
-    <text x="410" y="235" font-size="14" class="text-label">Gateway</text>
-    <text x="410" y="255" font-size="14" class="text-label">(S3G/HttpFS)</text>
+    <rect x="400" y="210" width="100" height="80" class="server-box"/>
+    <text x="450" y="235" font-size="14" class="text-label">Gateway</text>
+    <text x="450" y="255" font-size="14" class="text-label">(S3G/HttpFS)</text>
 
     <!-- Load Balancer -->
-    <rect x="510" y="210" width="120" height="80" class="lb-box"/>
-    <text x="570" y="235" font-size="16" class="text-label">Load</text>
-    <text x="570" y="255" font-size="16" class="text-label">Balancer</text>
+    <rect x="550" y="210" width="120" height="80" class="lb-box"/>
+    <text x="610" y="235" font-size="16" class="text-label">Load</text>
+    <text x="610" y="255" font-size="16" class="text-label">Balancer</text>
 
     <!-- Client Label -->
-    <text x="720" y="250" font-size="16" class="text-label">Clients</text>
+    <text x="760" y="250" font-size="16" class="text-label">Clients</text>
 
     <!-- Section Label: Datanodes -->
     <text x="500" y="330" class="section-label">Datanodes (Multiple Racks)</text>
@@ -165,12 +171,9 @@
 
     <!-- Arrows -->
     <!-- Gateway Cluster to Load Balancer arrow -->
-    <line x1="470" y1="250" x2="510" y2="250" class="arrow-line"/>
-    
-    <!-- Individual gateway connection lines (non-arrowed) -->
-    <line x1="240" y1="250" x2="280" y2="250" stroke="#255200" stroke-width="1" stroke-dasharray="4,2"/>
-    <line x1="350" y1="250" x2="380" y2="250" stroke="#255200" stroke-width="1" stroke-dasharray="4,2"/>
+    <line x1="510" y1="250" x2="550" y2="250" class="arrow-line"/>
     
     <!-- Load Balancer to Clients arrow -->
-    <line x1="630" y1="250" x2="680" y2="250" class="arrow-line"/>
+    <line x1="670" y1="250" x2="720" y2="250" class="arrow-line"/>
+    
 </svg>
