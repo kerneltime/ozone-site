@@ -99,51 +99,51 @@
     <!-- Section Label: Datanodes -->
     <text x="500" y="330" class="section-label">Datanodes (Multiple Racks)</text>
 
-    <!-- Datanode grid - multiple datanodes across racks -->
+    <!-- Datanode grid - multiple datanodes across racks, centered -->
     <!-- Rack 1 -->
-    <rect x="50" y="350" width="80" height="60" class="server-box"/>
-    <text x="90" y="385" font-size="14" class="text-label">DN 1</text>
+    <rect x="250" y="350" width="80" height="60" class="server-box"/>
+    <text x="290" y="385" font-size="14" class="text-label">DN 1</text>
 
-    <rect x="140" y="350" width="80" height="60" class="server-box"/>
-    <text x="180" y="385" font-size="14" class="text-label">DN 2</text>
+    <rect x="340" y="350" width="80" height="60" class="server-box"/>
+    <text x="380" y="385" font-size="14" class="text-label">DN 2</text>
 
-    <rect x="230" y="350" width="80" height="60" class="server-box"/>
-    <text x="270" y="385" font-size="14" class="text-label">DN 3</text>
+    <rect x="430" y="350" width="80" height="60" class="server-box"/>
+    <text x="470" y="385" font-size="14" class="text-label">DN 3</text>
 
-    <text x="370" y="385" font-size="14" class="text-label">...</text>
+    <text x="530" y="385" font-size="14" class="text-label">...</text>
 
-    <rect x="410" y="350" width="80" height="60" class="server-box"/>
-    <text x="450" y="385" font-size="14" class="text-label">DN N</text>
+    <rect x="570" y="350" width="80" height="60" class="server-box"/>
+    <text x="610" y="385" font-size="14" class="text-label">DN N</text>
 
     <!-- Rack 2 -->
-    <rect x="50" y="430" width="80" height="60" class="server-box"/>
-    <text x="90" y="465" font-size="14" class="text-label">DN 1</text>
+    <rect x="250" y="430" width="80" height="60" class="server-box"/>
+    <text x="290" y="465" font-size="14" class="text-label">DN 1</text>
 
-    <rect x="140" y="430" width="80" height="60" class="server-box"/>
-    <text x="180" y="465" font-size="14" class="text-label">DN 2</text>
+    <rect x="340" y="430" width="80" height="60" class="server-box"/>
+    <text x="380" y="465" font-size="14" class="text-label">DN 2</text>
 
-    <rect x="230" y="430" width="80" height="60" class="server-box"/>
-    <text x="270" y="465" font-size="14" class="text-label">DN 3</text>
+    <rect x="430" y="430" width="80" height="60" class="server-box"/>
+    <text x="470" y="465" font-size="14" class="text-label">DN 3</text>
 
-    <text x="370" y="465" font-size="14" class="text-label">...</text>
+    <text x="530" y="465" font-size="14" class="text-label">...</text>
 
-    <rect x="410" y="430" width="80" height="60" class="server-box"/>
-    <text x="450" y="465" font-size="14" class="text-label">DN N</text>
+    <rect x="570" y="430" width="80" height="60" class="server-box"/>
+    <text x="610" y="465" font-size="14" class="text-label">DN N</text>
 
     <!-- Rack 3 -->
-    <rect x="50" y="510" width="80" height="60" class="server-box"/>
-    <text x="90" y="545" font-size="14" class="text-label">DN 1</text>
+    <rect x="250" y="510" width="80" height="60" class="server-box"/>
+    <text x="290" y="545" font-size="14" class="text-label">DN 1</text>
 
-    <rect x="140" y="510" width="80" height="60" class="server-box"/>
-    <text x="180" y="545" font-size="14" class="text-label">DN 2</text>
+    <rect x="340" y="510" width="80" height="60" class="server-box"/>
+    <text x="380" y="545" font-size="14" class="text-label">DN 2</text>
 
-    <rect x="230" y="510" width="80" height="60" class="server-box"/>
-    <text x="270" y="545" font-size="14" class="text-label">DN 3</text>
+    <rect x="430" y="510" width="80" height="60" class="server-box"/>
+    <text x="470" y="545" font-size="14" class="text-label">DN 3</text>
 
-    <text x="370" y="545" font-size="14" class="text-label">...</text>
+    <text x="530" y="545" font-size="14" class="text-label">...</text>
 
-    <rect x="410" y="510" width="80" height="60" class="server-box"/>
-    <text x="450" y="545" font-size="14" class="text-label">DN N</text>
+    <rect x="570" y="510" width="80" height="60" class="server-box"/>
+    <text x="610" y="545" font-size="14" class="text-label">DN N</text>
 
 
     <!-- Arrows -->

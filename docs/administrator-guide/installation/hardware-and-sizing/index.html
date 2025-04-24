@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Apache Ozone","applicationCategory":"Storage","operatingSystem":"Cross-platform","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Scalable, reliable, distributed storage system optimized for data analytics and object store workloads.","url":"https://ozone.apache.org/","author":{"@type":"Organization","name":"The Apache Software Foundation","url":"https://www.apache.org/"},"license":"https://www.apache.org/licenses/LICENSE-2.0"}</script>
 <script src="/script/matomo.js"></script><link rel="stylesheet" href="/ozone-site/assets/css/styles.56cfdefb.css">
-<script src="/ozone-site/assets/js/runtime~main.d42742ad.js" defer="defer"></script>
+<script src="/ozone-site/assets/js/runtime~main.61d9da04.js" defer="defer"></script>
 <script src="/ozone-site/assets/js/main.d5c3854d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -72,6 +72,17 @@
 <li>JBOD (Just a Bunch Of Disks) configurations are supported and common</li>
 <li>Consider drive failure rates when sizing total capacity</li>
 </ul>
+<p><strong>Ratis Transaction Log Configuration:</strong></p>
+<p>Datanodes use the Apache Ratis consensus protocol for container operations which requires fast storage for transaction logs. Configure dedicated SSD storage for Ratis transaction logs using these properties in your <code>ozone-site.xml</code>:</p>
+<div class="codeBlockContainer_pSqG theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_u6SC"><pre tabindex="0" class="prism-code language-text codeBlock_s1ep thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_zxkO"><span class="token-line" style="color:#393A34"><span class="token plain">dfs.container.ratis.datastream.storage.dir=/ssd/datanode/datastream</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">dfs.container.ratis.snapshot.dir=/ssd/datanode/snapshot</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">dfs.container.ratis.wal.storage.dir=/ssd/datanode/wal</span><br></span></code></pre><div class="buttonGroup_mKws"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_cLXa" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_qppB"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_QdWd"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>These paths should point to directories on your SSD storage device. For high-performance production systems, we recommend:</p>
+<ol>
+<li><strong>Dedicated SSD</strong>: Use a separate SSD dedicated to Ratis transaction logs</li>
+<li><strong>XFS File System</strong>: Format the SSD with XFS for optimal performance</li>
+<li><strong>Direct I/O</strong>: Enable direct I/O to bypass the page cache when appropriate</li>
+<li><strong>Redundancy</strong>: For critical deployments, consider RAID1 for the SSD storing transaction logs</li>
+</ol>
+<p>For smaller deployments, these directories can share the same SSD as your general metadata disk, but they should be separated for enterprise workloads.</p>
 <h3 class="anchor anchorWithStickyNavbar_i6ia" id="mixed-compute-storage-datanode">Mixed Compute-Storage Datanode<a href="#mixed-compute-storage-datanode" class="hash-link" aria-label="Direct link to Mixed Compute-Storage Datanode" title="Direct link to Mixed Compute-Storage Datanode">​</a></h3>
 <p>For workloads requiring compute capabilities alongside storage:</p>
 <table><thead><tr><th>Component</th><th>Specifications</th></tr></thead><tbody><tr><td>CPU</td><td>24-48 cores</td></tr><tr><td>Memory</td><td>128-512GB</td></tr><tr><td>Storage</td><td>Same as standard datanode</td></tr><tr><td>Network</td><td>25/40GbE+</td></tr></tbody></table>
